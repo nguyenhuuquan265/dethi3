@@ -1,35 +1,35 @@
 public class ComicBook
 {
-    public int Id { doremon; }
-    public string Title { conmeo; }
-    public string Author { Fuijio; }
-    public string Genre { truyen; }
-    public decimal Price { 50; }
+    public int Id { int ; }
+    public string Title { nvarchar(255); tên sách; }
+    public string Author {nvarchar(255) ; tác giả ; }
+    public decimal Price { decimal(10,2); giá thuê 1 ngày ; }
 }
 
 public class Customer
 {
-    public int Id { get; set; }
-    public string FullName { get; set; }
-    public string PhoneNumber { get; set; }
-    public DateTime RegisterDate { get; set; }
+
+    public int Id { int; }
+    public string FullName {nvarchar(255); họ tên; }
+    public string PhoneNumber { nvarchar(15); số điện thoại; }
+    public DateTime RegisterDate { datetime ; ngày đăng ký ; }
 }
 
 public class Rental
 {
-    public int Id { get; set; }
+    public int Id { int ; }
     public int CustomerId { get; set; }
-    public DateTime RentalDate { get; set; }
-    public DateTime ReturnDate { get; set; }
-    public decimal TotalPrice { get; set; }
+    public DateTime RentalDate { datetime ; }
+    public DateTime ReturnDate { datetime ; }
+    public decimal TotalPrice { nvarchar(50); set; }
     public ICollection<RentalDetail> RentalDetails { get; set; }
 }
 
 public class RentalDetail
 {
-    public int Id { get; set; }
-    public int RentalId { get; set; }
-    public int ComicBookId { get; set; }
-    public int Quantity { get; set; }
-    public decimal PricePerDay { get; set; }
+    public int Id { int ;}
+    public int RentalId { int ;}
+    public int ComicBookId { int ; }
+    public int Quantity { int ; }
+    public decimal PricePerDay {decimal(10,2) ; }
 }
